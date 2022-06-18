@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+    <!-- Aqui estamos chamando o arquivo EJS head com o metodo include-->
+    <%- include('../partials/head'); %>
+    
+    <body class="container">
+        
+        <%- include('../partials/header'); %>
+
+        <main>
+            <div class="jumbotron">
+                <h1>Node com EJS</h1>
+                <p>Vamos aprender a trabalhar com arquivos EJS</p>
+                <p><%= subtitle %></p>
+            </div>
+
+            <ul>
+
+                <!-- 
+                Aqui estamos executando um script com o EJS, estamos fazendo um forEach: 
+                    
+                    O método forEach() executa uma dada função em cada elemento de um array.
+                
+                Estamos fazendo um forEach no quality que está recendo o array itens declado no server.js que será retornado nas tags strong e li
+
+                tudo que estiver dentro das tags <% %> é um script do EJS
+                -->
+                <% qualitys.forEach(function(quality){ %>
+                <li>
+                    <strong>
+                       <!-- Aqui estamos fazendo um script do EJS 
+                        
+                        utilizando quality tag <%= quality.title %> estamos retornando o que está no array itens 
+                        
+                        cada lup que o forEach estiver executando, estamos retornando o title e a mensagem armazenadas no array itens
+                        -->
+                       <%= quality.title %>
+                    </strong>
+                    <%= quality.message %>
+                </li>
+
+                <% }) %>
+                
+            </ul>
+
+        </main>
+
+        <%- include('../partials/footer'); %>
+    
+</body>
+</html>

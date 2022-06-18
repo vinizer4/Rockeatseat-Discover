@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+    <!-- Aqui estamos chamando o arquivo EJS head com o metodo include-->
+    <%- include('../partials/head'); %>
+
+    <body class="container">
+        
+        <%- include('../partials/header', {
+            pagina: 'Sobre'
+        }); %>  
+
+        <main>
+            <div class="jumbotron">
+                <h1>Sobre mim</h1>
+                <p>Oi sou Vinicius Teixeira Estudande de programação</p>
+            </div>
+        </main>
+
+        <%- include('../partials/footer'); %>
+
+    </body>
+</html>
